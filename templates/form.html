@@ -1,0 +1,107 @@
+
+<html>
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Sign Up Form</title>
+      <link rel="stylesheet" href="https://codepen.io/gymratpacks/pen/VKzBEp#0">
+      <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="/static/style.css">
+  </head>
+  <body>
+    <div class="row">
+  <div class="col-md-12">
+    <form action="/form" method="post">
+      <h1> REGISTER </h1>
+      
+      <fieldset>
+        
+        <legend><span class="number">1</span> YOUR DETAILS</legend>
+      
+        <label for="name">name:</label>
+        <input type="text" id="name" name="name">
+    
+
+
+        <label for="last_name">last Name:</label>
+        <input type="text" id="last_name" name="last_name">
+      
+        <label for="email">email:</label>
+        <input type="email" id="email" name="email">
+     
+        <label for="phonenumber">phonenumber:</label>
+        <input type="number" id="phonenumber"  name="phonenumber">
+        
+            <label for="date_of_birth">date_of_birth</label>
+        <input type="datetime-local" id="date_of_birth"  name="date_of_birth"><br>
+         <br>
+        <label for="passes">Passes:</label>
+  <select id="passes" name="passes">
+
+  <option value="general">General</option>
+  <option value="vip">VIP</option>
+  <option value="backstage">Backstage</option>
+  </select>
+
+  <br>
+
+ <label for="seat">seat no</label>
+ <select id="seat" name="seat">
+
+ <option value="1A">1A</option>
+ <option value="2C">2C</option>
+ <option value="12B">12B</option>
+ <option value="4I">4I</option>
+ <option value="5C">5C</option>
+ <option value="23B">23B</option>
+ <option value="4D">4D</option>
+ <option value="19C">19C</option>
+ <option value="23C">23C</option>
+ </select>
+    
+      
+      
+<br>
+         <br>
+          <label for="event">event</label>
+        <select id="events" name="events">
+          <optgroup label="ongoing events">
+            <option value="SUNBURN">SUNBURN</option>
+            <option value="TOMMORROWLAND">TOMMORROWLAND</option>
+            <option value="ROLLING LOUD">ROLLING LOUD</option>
+            <option value="COACHELLA">COACHELLA</option>
+            <option value="OZZFEST">OZZFEST</option>
+            <option value="BANGLORE_OPEN_AIR">BANGLORE_OPEN_AIR</option>
+            <option value="Lollapalooza"> Lollapalooza</option>
+            <option value="ULTRA_MIAMI">ULTRA_MIAMI</option>
+             
+          </optgroup>
+            
+            
+          
+     <br>
+
+    
+       <br>
+
+       <label>Pa:</label>
+       
+       
+            <input type="hidden" id="pa" value="pa" name="pa"><label for="pa" class="light"></label><br>
+        
+        
+      </fieldset>
+      <fieldset>  
+
+        <button type="submit">REGISTER</button>
+      
+     </form>
+      </div>
+    </div>
+
+    <div>
+      <a href="/tickets"><img style="position: absolute; top: 5%; right: 10%;" src="/static/back-arrow-50.png" alt="back"></a>
+    </div>
+    
+  </body>
+</html>

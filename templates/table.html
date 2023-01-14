@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/table.css">
+</head>
+<body style="background: rgb(192, 150, 184) no-repeat;">
+  
+
+
+  
+  <div class="container my-3">
+      <h2>REGISTER CUSTOMERS</h2>
+      
+              {% if allevent|length == 0 %}
+                 
+              <div class="alert alert-dark" role="alert">
+                  No Todos found. Add your first todo now!
+                </div>
+                  {% else %} 
+                  <table class="table" >
+                      <thead>
+                        <tr>
+                          <th scope="col">SNo</th>
+                          <th scope="col">name</th>
+                          <th scope="col">last_name</th>
+                          <th scope="col">email</th>
+                          <th scope="col">phonenumber</th>
+                          <th scope="col">date_of_birth</th>
+                          <th scope="col">passes</th>
+                          <th scope="col">seat</th>
+                          <th scope="col">events</th>
+                          <th scope="col">actions</th>
+                          
+                        </tr>
+                      </thead>
+                      
+                      <tbody>
+            {% for eventhive in allevent %}
+            <tr>
+              <th scope="row">{{loop.index}}</th>
+              <td>{{eventhive.name}}</td>
+              <td>{{eventhive.last_name}}</td>
+              <td>{{eventhive.email}}</td>
+              <td>{{eventhive.phonenumber}}</td>
+              <td>{{eventhive.date_of_birth}}</td>
+              <td>{{eventhive.passes}}</td>
+              <td>{{eventhive.seat}}</td>
+              <td>{{eventhive.events}}</td>
+              
+              <td>
+                <button id="up"> <a style="text-decoration: none; color: black;" href="/update/{{eventhive.sno}}" type="button">Update</button></button>
+                <button id="del"><a style="text-decoration: none; color: rgb(4, 4, 4);" href="/delete/{{eventhive.sno}}" type="button">Delete</button></button>
+              
+              </td>
+            </tr>
+            
+            {% endfor %}
+          </tbody>
+          </table>
+            {% endif %}
+             
+
+
+</body>
+</html>

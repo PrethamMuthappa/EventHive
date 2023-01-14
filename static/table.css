@@ -1,0 +1,72 @@
+body
+{
+  background: linear-gradient(blue)
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  th {
+    background-color: #dddddd;
+  }
+
+
+
+#up
+{
+ 
+  
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+  background: #FFF;
+  border: 1px solid #D5D9D9;
+  font-size: 13px;
+  height: 31px;
+  padding: 0 11px;
+  text-align: center;
+  font-weight: 400;
+  color: #0F1111;
+ 
+  
+
+
+}
+  
+
+#del
+{
+  
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+  background: #FFF;
+  border: 1px solid #D5D9D9;
+  font-size: 13px;
+  height: 31px;
+  padding: 0 11px;
+  text-align: center;
+  font-weight: 400;
+  color: #0F1111;
+
+  
+
+
+}
+
+#upa
+{
+  color: white;
+  text-decoration: none;
+}
+
