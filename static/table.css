@@ -1,72 +1,41 @@
-body
-{
-  background: linear-gradient(blue)
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  background: #105469;
+  font-family: 'Open Sans', sans-serif;
+}
 table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  th, td {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  th {
-    background-color: #dddddd;
-  }
-
-
-
-#up
-{
- 
-  
-  display: inline-block;
-  outline: 0;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
-  background: #FFF;
-  border: 1px solid #D5D9D9;
-  font-size: 13px;
-  height: 31px;
-  padding: 0 11px;
-  text-align: center;
-  font-weight: 400;
-  color: #0F1111;
- 
-  
-
-
+  background: #012B39;
+  border-radius: 0.25em;
+  border-collapse: collapse;
+  margin: 1em;
 }
-  
-
-#del
-{
-  
-  display: inline-block;
-  outline: 0;
-  cursor: pointer;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
-  background: #FFF;
-  border: 1px solid #D5D9D9;
-  font-size: 13px;
-  height: 31px;
-  padding: 0 11px;
-  text-align: center;
-  font-weight: 400;
-  color: #0F1111;
-
-  
-
-
+th {
+  border-bottom: 1px solid #364043;
+  color: #E2B842;
+  font-size: 0.85em;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  text-align: left;
 }
-
-#upa
-{
-  color: white;
-  text-decoration: none;
+td {
+  color: #fff;
+  font-weight: 400;
+  padding: 0.65em 1em;
+}
+.disabled td {
+  color: #4F5F64;
+}
+tbody tr {
+  transition: background 0.25s ease;
+}
+tbody tr:hover {
+  background: #014055;
 }
 
