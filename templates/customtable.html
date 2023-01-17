@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom booking table</title>
+    <link rel="stylesheet" href="/static/table.css">
+</head>
+<body>
+    
+  
+  <div class="container my-3">
+    <h2>REGISTER CUSTOMERS</h2>
+    
+            {% if allcustom|length == 0 %}
+               
+            <div class="alert alert-dark" role="alert">
+                No data found. Add data
+              </div>
+                {% else %} 
+                <table class="table" >
+                    <thead>
+                      <tr>
+                        <th scope="col">SNo</th>
+                        <th scope="col">name</th>
+                        <th scope="col">email</th>
+                        <th scope="col">phonenumber</th>
+                        <th scope="col">bookings</th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+          {% for eventhive in allcustom %}
+          <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{eventhive.cusname}}</td>
+            <td>{{eventhive.cusemail}}</td>
+            <td>{{eventhive.cusphone}}</td>
+            <td>{{eventhive.cus}}</td>
+            
+            
+            <td>
+              <button id="up"> <a style="text-decoration: none; color: black;" href="/cusupdate/{{eventhive.sno}}" type="button">Update</button></button>
+              <button id="del"><a style="text-decoration: none; color: rgb(4, 4, 4);" href="/cusdelete/{{eventhive.sno}}" type="button">Delete</button></button>
+            
+            </td>
+          </tr>
+          
+          {% endfor %}
+        </tbody>
+        </table>
+          {% endif %}
+           
+
+</body>
+</html>

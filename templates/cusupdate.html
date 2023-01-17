@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/test.css">
+
+</head>
+<body>
+    
+    
+    <div>
+
+
+        <div id="container">
+         
+            <img style="width: 900px;" src="/static/pexels-photo-4449792.jpeg" alt="">
+
+            
+                
+            <div class="row">
+                <div class="col-md-12">
+                  <form action="/cusupdate/{{eventhive.sno}}" method="post">
+                    <h1> COUSTOM BOOKINGS </h1>
+                    
+                    <fieldset>
+                      
+                      <legend><span class="number">1</span> YOUR DETAILS</legend>
+                    
+                      <label for="cusname">name:</label>
+                      <input type="text" id="cusname" name="cusname" value="{{eventhive.cusname}}">
+
+                  
+                      <label for="cusemail">email:</label>
+                      <input type="email" id="cusemail" name="cusemail" value="{{eventhive.cusemail}}">
+                   
+                      <label for="cusphone">phonenumber:</label>
+                      <input type="number" id="cusphone"  name="cusphone" value="{{eventhive.cusphone}}">
+
+                      <label for="cus">event description</label>
+                      <textarea id="cus" name="cus" value="{{eventhive.cus}}" placeholder="Tell us anything else that might be important." required></textarea>
+                      
+                        
+                                            
+                    <br>
+              
+                    
+                    </fieldset>
+                    <fieldset>  
+              
+                      <button type="submit">update</button>
+                    
+                   </form>
+                    </div>
+                  </div>
+              
+                  <div>
+                    <a href="/tickets"><img style="position: absolute; top: 5%; right: 2%;" src="/static/back-arrow-50.png" alt="back"></a>
+                  </div>
+
+</body>
+</html>
