@@ -230,10 +230,42 @@ def feeddelete(sno):
     db.session.commit()
     return redirect("/feedtable")
 
+############################################## BILLING ##################################################################
+
+class payment(db.Model):
+    sno=db.Column(db.Integer,primary_key=True)
+    cardno=db.Column(db.Integer,nullable=False)
+    date=db.Column(db.String(20),nullable=False)
+    cvv=db.Column(db.Integer,nullable=False)
+    cname=db.Column(db.String(20),nullable=False)
+
+    def __repr__(self) -> str:
+        return f"{self.sno}-{self.cardno} - {self.date} - {self.cvv} -{self.cname}"
 
 
 
+@app.route('/billform',methods=['GET','POST'])
+def bii():
+    if request.method=='POST':
 
+        cardno=request.form['cardno']
+        date=request.form['date']
+        cvv=request.form['cvv']
+        cname=request.form['cname']
+
+        eventhive=payment(cardno=cardno,date=date,cvv=cvv,cname=cname)
+        db.session.add(eventhive)
+        db.session.commit()
+    allbill=payment.query.all()
+    return render_template('billingform.html',allbill=allbill)    
+
+
+@app.route('/tablebill')
+def newbilltable():
+    allbill=payment.query.all()
+    print(allbill)
+    return render_template('billtable.html',allbill=allbill)
+    
     
 
 

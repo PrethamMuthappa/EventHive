@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>custom booking table</title>
+    <link rel="stylesheet" href="/static/table.css">
+</head>
+<body>
+    
+  
+  <div class="container my-3">
+    <h2>REGISTER CUSTOMERS</h2>
+    
+            {% if allbill|length == 0 %}
+               
+            <div class="alert alert-dark" role="alert">
+                No data found. Add data
+              </div>
+                {% else %} 
+                <table class="table" >
+                    <thead>
+                      <tr>
+                        <th scope="col">SNo</th>
+                        <th scope="col">card number</th>
+                        <th scope="col">date</th>
+                        <th scope="col">cvv</th>
+                        <th scope="col">name on card</th>
+                      </tr>
+                    </thead>
+                    
+                    <tbody>
+          {% for eventhive in allbill %}
+          <tr>
+            <th scope="row">{{loop.index}}</th>
+            <td>{{eventhive.cardno}}</td>
+            <td>{{eventhive.date}}</td>
+            <td>{{eventhive.cvv}}</td>
+            <td>{{eventhive.cname}}</td>
+            
+            
+          </tr>
+          
+          {% endfor %}
+        </tbody>
+        </table>
+          {% endif %}
+           
+
+</body>
+</html>
