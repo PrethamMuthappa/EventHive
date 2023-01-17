@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/table.css">
+</head>
+<body style="background: rgb(192, 150, 184) no-repeat;">
+  
+
+
+  
+  <div class="container my-3">
+      <h2>REGISTER CUSTOMERS</h2>
+      
+              {% if allfeed|length == 0 %}
+                 
+              <div class="alert alert-dark" role="alert">
+                  No Todos found. Add your first todo now!
+                </div>
+                  {% else %} 
+                  <table class="table" >
+                      <thead>
+                        <tr>
+                          <th scope="col">SNo</th>
+                          <th scope="col">name</th>
+                          <th scope="col">food</th>
+                          <th scope="col">saftey</th>
+                          <th scope="col">parking</th>
+                          <th scope="col">visibility</th>
+                          
+                          
+                        </tr>
+                      </thead>
+                      
+                      <tbody>
+            {% for eventhive in allfeed %}
+            <tr>
+              <th scope="row">{{loop.index}}</th>
+              <td>{{eventhive.feedname}}</td>
+              <td>{{eventhive.food}}</td>
+              <td>{{eventhive.saftey}}</td>
+              <td>{{eventhive.parking}}</td>
+              <td>{{eventhive.visibility}}</td>
+             
+              
+              <td>
+                <button id="up"> <a style="text-decoration: none; color: black;" href="/feedupdate/{{eventhive.sno}}" type="button">Update</button></button>
+                <button id="del"><a style="text-decoration: none; color: rgb(4, 4, 4);" href="/feeddelete/{{eventhive.sno}}" type="button">Delete</button></button>
+              
+              </td>
+            </tr>
+            
+            {% endfor %}
+          </tbody>
+          </table>
+            {% endif %}
+             
+
+
+</body>
+</html>

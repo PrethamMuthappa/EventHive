@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/feed.css">
+</head>
+<body style="background-color: black;">
+
+    <div>
+
+
+        <div id="container">
+         
+            <img style="width: 900px;" src="/static/Custom Booking SVG.svg" alt="mysho">
+
+            
+                
+            <div class="row">
+                <div class="col-md-12">
+                  <form action="/feedupdate/{{eventhive.sno}}" method="POST">
+                    <h1> feedback </h1>
+                    
+                    <fieldset>
+                      
+                      <legend><span class="number">1</span> YOUR feedback</legend>
+                    
+                      <label for="cusname">name:</label>
+                      <input type="text" id="feedname" name="feedname" value="{{eventhive.feedname}}">
+
+                  
+                      <label for="food">food</label>
+                      <select id="food" name="food" value="{{eventhive.food}}">
+                      <option value="amazing">amazing</option>
+                      <option value="good">good</option>
+                      <option value="bad">bad</option>
+                      </select>
+
+                      <label for="saftey">saftey</label>
+                      <select id="saftey" name="saftey" value="{{eventhive.saftey}}">
+                      <option value="verysafe">verysafe</option>
+                      <option value="good">good</option>
+                      <option value="unsafe">unsafe</option>
+                      </select>
+                      
+                      <label for="parking">parking</label>
+                      <select id="parking" name="parking" value="{{eventhive.parking}}">
+                      <option value="good">good</option>
+                      <option value="bad">bad</option>
+                      </select>
+                      
+                      <label for="visibility">visibility</label>
+                      <select id="visibility" name="visibility" value="{{eventhive.visibility}}">
+                      <option value="amazing">amazing</option>
+                      <option value="good">good</option>
+                      <option value="bad">bad</option>
+                      </select>
+                
+
+                    
+
+                                            
+                    <br>
+            
+                    </fieldset>
+                    <fieldset> 
+                        
+                        
+                        <button type="submit">update</button>
+              
+                     
+                    
+                   </form>
+                    </div>
+                  </div>
+              
+                  <div>
+                    <a href="/feedtable"><img style="position: absolute; top: 5%; right: 2%;" src="/static/back-arrow-50.png" alt="back"></a>
+                  </div>
+            
+               
+                
+              
+              
+
+
+        </div>
+
+
+    </div>
+    
+</body>
+</html>

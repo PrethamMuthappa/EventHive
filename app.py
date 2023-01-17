@@ -164,7 +164,77 @@ def cusdelete(sno):
     return redirect("/custable")
 
 
+######################################### FEED BACK ################################################
 
+class feedback(db.Model):
+    sno=db.Column(db.Integer,primary_key=True)
+    feedname=db.Column(db.String(50),nullable=False)
+    food=db.Column(db.String(50),nullable=False)
+    saftey=db.Column(db.String(50),nullable=False)
+    parking=db.Column(db.String(50),nullable=False)
+    visibility=db.Column(db.String(50),nullable=False)
+
+    def __repr__(self) -> str:
+        return f" {self.sno} - {self.feedname} - {self.food} - {self.saftey} -{self.parking} -{self.visibility} "
+
+
+@app.route('/feedform', methods=['GET','POST'])
+def feeddata():
+    if request.method=='POST':
+        feedname=request.form['feedname']
+        food=request.form['food']
+        saftey=request.form['saftey']
+        parking=request.form['parking']
+        visibility=request.form['visibility']
+
+        eventhive=feedback(feedname=feedname,food=food,saftey=saftey,parking=parking,visibility=visibility)
+        db.session.add(eventhive)
+        db.session.commit()
+
+    allfeed=feedback.query.all()
+    return render_template('feedpage.html',allfeed=allfeed)
+
+@app.route('/feedtable')
+def newfeedtable():
+    allfeed=feedback.query.all()
+    print(allfeed)
+    return render_template('feedtable.html',allfeed=allfeed)
+
+@app.route('/feedupdate/<int:sno>',methods=['GET','POST'])
+def upfeed(sno):
+    if request.method=='POST':
+        feedname=request.form['feedname']
+        food=request.form['food']
+        saftey=request.form['saftey']
+        parking=request.form['parking']
+        visibility=request.form['visibility']
+        eventhive=feedback.query.filter_by(sno=sno).first()
+        eventhive.feedname=feedname
+        eventhive.food=food
+        eventhive.saftey=saftey
+        eventhive.parking=parking
+        eventhive.visibility=visibility
+
+        db.session.add(eventhive)
+        db.session.commit()
+        return redirect("/")
+
+    eventhive=feedback.query.filter_by(sno=sno).first()
+    return render_template('feedupdates.html',eventhive=eventhive)
+
+
+@app.route('/feeddelete/<int:sno>')
+def feeddelete(sno):
+    eventhive = feedback.query.filter_by(sno=sno).first()
+    db.session.delete(eventhive)
+    db.session.commit()
+    return redirect("/feedtable")
+
+
+
+
+
+    
 
 
 
