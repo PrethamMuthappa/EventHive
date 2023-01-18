@@ -27,6 +27,7 @@
                         <th scope="col">date</th>
                         <th scope="col">cvv</th>
                         <th scope="col">name on card</th>
+                        <th scope="col">actions</th>
                       </tr>
                     </thead>
                     
@@ -38,6 +39,13 @@
             <td>{{eventhive.date}}</td>
             <td>{{eventhive.cvv}}</td>
             <td>{{eventhive.cname}}</td>
+
+
+            <td>
+              
+              <button id="del"><a style="text-decoration: none; color: rgb(4, 4, 4);" href="/billdel/{{eventhive.sno}}" type="button">Delete</button></button>
+            
+            </td>
             
             
           </tr>

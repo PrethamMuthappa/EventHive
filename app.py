@@ -257,7 +257,16 @@ def bii():
         db.session.add(eventhive)
         db.session.commit()
     allbill=payment.query.all()
-    return render_template('billingform.html',allbill=allbill)    
+    return render_template('billingform.html',allbill=allbill) 
+
+
+@app.route('/billdel/<int:sno>')
+def paydel(sno):
+    eventhive = payment.query.filter_by(sno=sno).first()
+    db.session.delete(eventhive)
+    db.session.commit()
+    return redirect("/tablebill")
+   
 
 
 @app.route('/tablebill')
@@ -286,6 +295,7 @@ def adminlogin():
         eventhive=admin(username=username,password=password)
         db.session.add(eventhive)
         db.session.commit()
+        return redirect('/')
 
     alladmin=admin.query.all()
     
