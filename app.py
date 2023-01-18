@@ -8,16 +8,16 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 app.app_context().push()
 
-class Event(db.Model):
+class user(db.Model):
     sno = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(500), nullable=False)
+    name = db.Column(db.String(100), nullable=False)
     last_name=db.Column(db.String(100),nullable=False)
-    email = db.Column(db.String(500), nullable=False)
+    email = db.Column(db.String(100), nullable=False)
     phonenumber = db.Column(db.Integer,nullable=False)
     date_of_birth = db.Column(db.Integer, nullable=False)
-    passes = db.Column(db.String(500), nullable=False)
-    seat = db.Column(db.String(500), nullable=False)
-    events = db.Column(db.String(500), nullable=False)
+    passes = db.Column(db.String(100), nullable=False)
+    seat = db.Column(db.String(100), nullable=False)
+    events = db.Column(db.String(100), nullable=False)
    
    
     def __repr__(self) -> str:
@@ -52,11 +52,11 @@ def registration_Page():
         passes=request.form['passes']
         seat=request.form['seat']
         events = request.form['events']
-        eventhive = Event(name=name,last_name=last_name, email=email,phonenumber=phonenumber,date_of_birth=date_of_birth,passes=passes,seat=seat, events=events)
+        eventhive = user(name=name,last_name=last_name, email=email,phonenumber=phonenumber,date_of_birth=date_of_birth,passes=passes,seat=seat, events=events)
         db.session.add(eventhive)
         db.session.commit()
         
-    allevent = Event.query.all()
+    allevent = user.query.all()
     
     return render_template('form.html', allevent=allevent)
 
@@ -71,7 +71,7 @@ def update(sno):
         passes=request.form['passes']
         seat=request.form['seat']
         events = request.form['events']
-        eventhive = Event.query.filter_by(sno=sno).first()
+        eventhive = user.query.filter_by(sno=sno).first()
         eventhive.name = name
         eventhive.last_name = last_name
         eventhive.email =email
@@ -85,13 +85,13 @@ def update(sno):
         db.session.commit()
         return redirect("/")
         
-    eventhive = Event.query.filter_by(sno=sno).first()
+    eventhive = user.query.filter_by(sno=sno).first()
     return render_template('update.html', eventhive=eventhive)
 
 
 @app.route('/delete/<int:sno>')
 def delete(sno):
-    eventhive = Event.query.filter_by(sno=sno).first()
+    eventhive = user.query.filter_by(sno=sno).first()
     db.session.delete(eventhive)
     db.session.commit()
     return redirect("/table")
@@ -99,7 +99,7 @@ def delete(sno):
 
 @app.route('/table')
 def products():
-    allevent = Event.query.all()
+    allevent = user.query.all()
     print(allevent)
     return render_template('table.html', allevent=allevent)
 
@@ -266,7 +266,39 @@ def newbilltable():
     print(allbill)
     return render_template('billtable.html',allbill=allbill)
     
+########################################### admin ####################################################
+
+class admin(db.Model):
+    sno=db.Column(db.Integer,primary_key=True)
+    username=db.Column(db.String(100),nullable=False)
+    password=db.Column(db.Integer,nullable=False)
+
+    def __repr__(self) -> str:
+        return f"{self.sno} - {self.username} - {self.password}"
+
+
+@app.route('/adminmain',methods=['GET','POST'])
+def adminlogin():
+    if request.method=='POST':
+        username=request.form['username']
+        password=request.form['password']
+
+        eventhive=admin(username=username,password=password)
+        db.session.add(eventhive)
+        db.session.commit()
+
+    alladmin=admin.query.all()
     
+    
+    return render_template('adminnew.html',alladmin=alladmin)
+    
+    
+
+@app.route('/admintable')
+def addtable():
+    alladmin=admin.query.all()
+    print(alladmin)
+    return render_template('admintable.html',alladmin=alladmin)    
 
 
 
