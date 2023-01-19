@@ -115,7 +115,6 @@ class custom(db.Model):
     def __repr__(self) -> str:
         return f"{self.sno}-{self.cusname} - {self.cusemail} -{self.cusphone}-{self.cus} "
 
-
 @app.route('/customs',methods=['GET','POST'])
 def custombookings():
     if request.method=='POST':
@@ -222,7 +221,6 @@ def upfeed(sno):
     eventhive=feedback.query.filter_by(sno=sno).first()
     return render_template('feedupdates.html',eventhive=eventhive)
 
-
 @app.route('/feeddelete/<int:sno>')
 def feeddelete(sno):
     eventhive = feedback.query.filter_by(sno=sno).first()
@@ -241,7 +239,6 @@ class payment(db.Model):
 
     def __repr__(self) -> str:
         return f"{self.sno}-{self.cardno} - {self.date} - {self.cvv} -{self.cname}"
-
 
 
 @app.route('/billform',methods=['GET','POST'])
@@ -267,7 +264,6 @@ def paydel(sno):
     db.session.commit()
     return redirect("/tablebill")
    
-
 
 @app.route('/tablebill')
 def newbilltable():
@@ -298,18 +294,14 @@ def adminlogin():
         return redirect('/')
 
     alladmin=admin.query.all()
-    
-    
     return render_template('adminnew.html',alladmin=alladmin)
     
     
-
 @app.route('/admintable')
 def addtable():
     alladmin=admin.query.all()
     print(alladmin)
     return render_template('admintable.html',alladmin=alladmin)    
-
 
 
 if __name__ == "__main__":
