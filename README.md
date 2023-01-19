@@ -18,12 +18,42 @@ and due to less time for the  project basic html and css was used for the fronte
 ![table](https://user-images.githubusercontent.com/98420696/213473091-5424cbd8-bfe9-43a4-82e1-37782beede7e.png) <br>
 
 ## Requirments
->python <br>
+>Python <br>
 >flask <br>
 >flask_sqlalchemy <br>
 >sqlite <br>
->html <br>
->css <br>
+>HTML <br>
+>CSS <br>
+
+## Instructions for running the applications
+>open vs code terminal and type
+~~~
+pip install flask
+~~~
+~~~
+pip install flask_sqlalchemy
+~~~
+~~~
+pip install SQLAlchemy
+~~~
+<p> Then u can download the files from here and open it in vs code</p>
+
+**important point to be noted**
+>The database file should be deleted and created again , to do that open terminal and type(Delete the existing .db file first)
+~~~ 
+    from app import app
+    from app import db
+    db.create_all()
+    exit()
+~~~
+By doing this a new db file will be created
+
+next run the app.py file and open the localhost shown in the terminal
+
+**THANK YOU !**
+
+
+
 
 
 
