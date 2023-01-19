@@ -11,16 +11,12 @@ and due to less time for the  project basic html and css was used for the fronte
 ![](https://img.shields.io/static/v1?label=Python&message=3&color=<red>)
 ![](https://img.shields.io/static/v1?label=sqlite&message=db&color=<COLOR>)
 
+![landingpage](https://user-images.githubusercontent.com/98420696/213472814-0c833d38-25ed-4b49-99a3-a537ba048e10.png)
+![event](https://user-images.githubusercontent.com/98420696/213472876-4ee2d380-e9bb-40d7-aa61-ca556c7eb8d4.png)
+![tickets](https://user-images.githubusercontent.com/98420696/213472905-62044494-58e7-44d3-a621-758a5d11c75e.png)
+![registration](https://user-images.githubusercontent.com/98420696/213472999-3a4b77d1-09ed-4bdc-80d0-1346eacf2911.png)
+![table](https://user-images.githubusercontent.com/98420696/213473091-5424cbd8-bfe9-43a4-82e1-37782beede7e.png)
 
-![Annotation 2023-01-14 165524](https://user-images.githubusercontent.com/98420696/212469669-8c4e9c82-4d99-4d6d-b6fb-fef990e21f1c.png)
-![Annotation 2023-01-14 165541](https://user-images.githubusercontent.com/98420696/212469675-b25922a9-10c2-4954-bf01-3b1837214fe3.png)
-![Annotation 2023-01-14 165609](https://user-images.githubusercontent.com/98420696/212469676-cf4da38d-04d6-4292-8fad-2bb40fcd1bde.png)
-![Annotation 2023-01-14 165627](https://user-images.githubusercontent.com/98420696/212469681-de82c9b5-ca7f-4aa4-9d4d-6faa4e2b1e41.png)
 
-## Requirments
->python <br>
->flask <br>
->flask_sqlalchemy <br>
->sqlite <br>
->html <br>
->css <br>
+
+
