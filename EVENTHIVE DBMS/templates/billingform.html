@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/billing.css">
+  </head>
+  <body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>   
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4 mb-lg-0 mb-3">
+            <div class="card p-3">
+                <div class="img-box">
+                    <img src="https://www.freepnglogos.com/uploads/visa-logo-download-png-21.png" alt="">
+                </div>
+                <div class="number">
+                    <label class="fw-bold" for="">**** **** **** 1060</label>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <small><span class="fw-bold">Expiry date:</span><span>10/16</span></small>
+                    <small><span class="fw-bold">Name:</span><span>***</span></small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-lg-0 mb-3">
+            <div class="card p-3">
+                <div class="img-box">
+                    <img src="https://www.freepnglogos.com/uploads/mastercard-png/file-mastercard-logo-svg-wikimedia-commons-4.png"
+                        alt="">
+                </div>
+                <div class="number">
+                    <label class="fw-bold">**** **** **** 1060</label>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <small><span class="fw-bold">Expiry date:</span><span>10/16</span></small>
+                    <small><span class="fw-bold">Name:</span><span>***</span></small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4 mb-lg-0 mb-3">
+            <div class="card p-3">
+                <div class="img-box">
+                    <img src="https://www.freepnglogos.com/uploads/discover-png-logo/credit-cards-discover-png-logo-4.png"
+                        alt="">
+                </div>
+                <div class="number">
+                    <label class="fw-bold">**** **** **** 1060</label>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                    <small><span class="fw-bold">Expiry date:</span><span>10/16</span></small>
+                    <small><span class="fw-bold">Name:</span><span>***</span></small>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 mt-4">
+            <div class="card p-3">
+                <p class="mb-0 fw-bold h4">Payment Methods</p>
+            </div>
+        </div>
+        <div class="col-12">
+            <div class="card p-3">
+                <div class="card-body border p-0">
+                    <p>
+                        <a class="btn btn-primary w-100 h-100 d-flex align-items-center justify-content-between"
+                            data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
+                            aria-controls="collapseExample">
+                            <span class="fw-bold">PayPal</span>
+                            <span class="fab fa-cc-paypal">
+                            </span>
+                        </a>
+                    </p>
+                    <div class="collapse p-3 pt-0" id="collapseExample">
+                        <div class="row">
+                            <div class="col-8">
+                                <p class="h4 mb-0">Summary</p>
+                                <p class="mb-0"><span class="fw-bold">Product:</span><span class="c-green">: Name of
+                                        product</span></p>
+                                <p class="mb-0"><span class="fw-bold">Price:</span><span
+                                        class="c-green">:$452.90</span></p>
+                                <p class="mb-0">
+                                   </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body border p-0">
+                    <p>
+                        <a class="btn btn-primary p-2 w-100 h-100 d-flex align-items-center justify-content-between"
+                            data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="true"
+                            aria-controls="collapseExample">
+                            <span class="fw-bold">Credit Card</span>
+                            <span class="">
+                                <span class="fab fa-cc-amex"></span>
+                                <span class="fab fa-cc-mastercard"></span>
+                                <span class="fab fa-cc-discover"></span>
+                            </span>
+                        </a>
+                    </p>
+                    <div class="collapse show p-3 pt-0" id="collapseExample">
+                        <div class="row">
+                            <div class="col-lg-5 mb-lg-0 mb-3">
+                                <p class="h4 mb-0">Summary</p>
+                                <p class="mb-0"><span class="fw-bold">Product:</span><span class="c-green">: Event tickets</span>
+                                </p>
+                                <p class="mb-0">
+                                    <span class="fw-bold">Price:</span>
+                                    <span class="c-green">:2000rs</span>
+                                </p>
+                                <p class="mb-0">
+                                   </p>
+                            </div>
+                            <div class="col-lg-7">
+                                <form action="/billform" class="form" method="POST">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="form__div">
+                                                <input type="number" class="form-control" placeholder=" " id="cardno" name="cardno">
+                                                <label for="cardno" class="form__label">Card Number</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="form__div">
+                                                <input type="datetime" class="form-control" placeholder=" " id="date" name="date">
+                                                <label for="date" class="form__label" >MM / yy</label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-6">
+                                            <div class="form__div">
+                                                <input type="password" class="form-control" placeholder=" " id="cvv" name="cvv">
+                                                <label for="cvv" class="form__label" >cvv code</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <div class="form__div">
+                                                <input type="text" class="form-control" placeholder=" " id="cname" name="cname">
+                                                <label for="cname" class="form__label" id="cname" name="cname">name on the card</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <button class="button-7" type="submit">pay</button>
+
+                                            
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        <a href="/tickets"><img style="position: absolute; top: 5%; right: 10%;" src="/static/back-arrow-50.png" alt="back"></a>
+    </div>
+</div>
+    
+</body>
+</html>
+  </body>
+
+</html>
